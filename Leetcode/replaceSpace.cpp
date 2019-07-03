@@ -27,7 +27,7 @@ public:
 	        if(length<newNumber){
                    return;
             }
-            //进行替换
+            //如果能插入的话进行空格替换
             while(olderNumber>=0&&newNumber>olderNumber){
                 if(str[olderNumber]==' '){
                     str[newNumber--]='0';
