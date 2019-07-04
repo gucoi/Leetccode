@@ -1,5 +1,6 @@
-## Leetccode
-# 记住没有立即的成功 只有不懈的努力 少点功利心 多点奋斗（More interest Less interests） 
+# 来到这里 就认真的读下去吧 放下心去
+
+## 请谨记没有立即的成功 只有不懈的努力 少点功利心 多点奋斗（More interest Less interests）  勿骄勿燥
 
 * Leetcode/剑指offer/一些算法题目集锦
 
@@ -10,5 +11,5 @@
 | 替换空格        | C++        | 牛客网   | [替换空格](/Leetcode/replaceSpace.cpp)   |
 | 二进制中1的个数 | C++        | 牛客网   | [二进制中1的个数](/牛客网/Numberof1.cpp) |
 | 调整数组顺序    | C++        | 牛客网   | [调整数组顺序](/牛客网/reOrderArray.cpp) |
-
+|合并两个链表     |C++          |牛客网    |[合并两个链表](/牛客网/Merge.md)        |
 
