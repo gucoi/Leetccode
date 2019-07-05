@@ -14,4 +14,4 @@
 |合并两个链表     |C++          |牛客网    |[合并两个链表](/牛客网/Merge.md)        |
 |删除单向链表的节点|C++         |Leetcode  |[删除单向链表的节点](https://github.com/PICKQUE/Leetccode/blob/master/Leetcode/DeleteListNode.md)|
 |增加链表的节点    |go          |Leetcode  |[增加链表的节点](https://github.com/PICKQUE/Leetccode/blob/master/Leetcode/AddNode.md)|
-|链表中的倒数第k个节点|go&&C++|牛客网|[链表中的倒数第k个节点](https://github.com/PICKQUE/Leetccode/blob/master/Leetcode/FindKthToTail.md)|
+|链表中的倒数第k个节点|go&&C++|牛客网|[链表中的倒数第k个节点](https://github.com/PICKQUE/Leetccode/blob/master/牛客网/FindKthToTail.md)|
