@@ -12,10 +12,5 @@
 | 二进制中1的个数 | C++        | 牛客网   | [二进制中1的个数](/牛客网/Numberof1.cpp) |
 | 调整数组顺序    | C++        | 牛客网   | [调整数组顺序](/牛客网/reOrderArray.cpp) |
 |合并两个链表     |C++          |牛客网    |[合并两个链表](/牛客网/Merge.md)        |
-<<<<<<< HEAD
-|删除单向链表的节点|C++|NULL|[删除单向链表的节点](/leetcode/DeleteListNode.md)|
-|增加链表的节点|go|NULL|[增加链表的节点](/leetcode/AddNodeGo.md)|
-=======
 |删除单向链表的节点|C++         |Leetcode  |[删除单向链表的节点](https://github.com/PICKQUE/Leetccode/blob/master/Leetcode/DeleteListNode.md)|
 |增加链表的节点    |go          |Leetcode  |[增加链表的节点](https://github.com/PICKQUE/Leetccode/blob/master/Leetcode/AddNode.md)|
->>>>>>> 79a63a645e17fe17eca7bea8863e621a052208e7
