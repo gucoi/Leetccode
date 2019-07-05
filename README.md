@@ -13,4 +13,4 @@
 | 调整数组顺序    | C++        | 牛客网   | [调整数组顺序](/牛客网/reOrderArray.cpp) |
 |合并两个链表     |C++          |牛客网    |[合并两个链表](/牛客网/Merge.md)        |
 |删除单向链表的节点|C++|NULL|[删除单向链表的节点](/leetcode/DeleteListNode.md)|
-|增加链表的节点|go|NULL|[增加链表的节点](/leetcode/AddNode.md)|
+|增加链表的节点|go|NULL|[增加链表的节点](/leetcode/AddNodeGo.md)|
