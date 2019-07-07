@@ -26,6 +26,7 @@
 |:---:|:---:|:----:|
 |lists|
 |   |[UseSingleList](#SingleLists)|[SinglLists](Go/SingleList.md)|
+|   |[UseArrayList](#ArrayLists)|[ArrayLists](Go/ArrayList.md)|
 
 A list where each element points to the next element in the list.
 
@@ -33,17 +34,19 @@ A list where each element points to the next element in the list.
 
 ```go
     func main() {
-	    list := New()
-	    list.Add(1, 2, 3, 4)
-	    // list.HeadAdd(9)
-	    list.Remove(3)
-	    list.Insert(10, 2)
-	    t, i := list.Find(2)
-	    if t {
-	    	fmt.Printf("find the element in the pos %d \n", i)
-	    }
-	    list.Display()
+		list := New()
+		list.Add(1, 2, 3, 4)
+		// list.HeadAdd(9)
+		list.Remove(3)
+		list.Insert(10, 2)
+		t, i := list.Find(2)
+		if t {
+			fmt.Printf("find the element in the pos %d \n", i)
+		}
+		list.Display()
 	}
 ```
+
+## ArrayList
 
 
