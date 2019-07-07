@@ -19,6 +19,7 @@
 |删除单向链表的节点|C++         |Leetcode  |[删除单向链表的节点](https://github.com/PICKQUE/Leetccode/blob/master/Leetcode/DeleteListNode.md)|
 |链表中的倒数第k个节点|go&&C++|牛客网|[链表中的倒数第k个节点](https://github.com/PICKQUE/Leetccode/blob/master/牛客网/FindKthToTail.md)|
 |二叉树镜像|C++|牛客网|[二叉树镜像](https://github.com/PICKQUE/Leetccode/blob/master/牛客网/Mirror.md)|
+|链表的反转|C++|牛客网|[链表的反转](https://github.com/PICKQUE/Leetccode/blob/master/牛客网/Reverlist.md)|
 
 ## go的一些常用的数据结构
 
