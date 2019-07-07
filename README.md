@@ -2,7 +2,9 @@
 
 请谨记
  **没有立即的成功 只有不懈的努力 少点功利心 多点奋斗（More interest Less interests）  勿骄勿燥**
-**这里有go的数据结构和一些常用的算法题**
+**这里有go的数据结构和一些笔试常用的算法题**
+
+另外这篇笔记参考了[gods](https://github.com/emirpasic/gods)的笔记模式
 
 ## Leetcode/剑指offer/一些算法题目集锦
 
@@ -25,6 +27,8 @@
 |lists|
 |   |[UseSingleList](#SingleLists)|[SinglLists](Go/SingleList.md)|
 
+A list where each element points to the next element in the list.
+
 ### SingleLists
 
 ```go
@@ -39,5 +43,7 @@
 	    	fmt.Printf("find the element in the pos %d \n", i)
 	    }
 	    list.Display()
-}
+	}
 ```
+
+
