@@ -32,7 +32,6 @@
 |   |[UseSingleList](#SingleLists)	|[SinglLists](Go/SingleList.md)|
 |   |[UseDoubleList](#DoubleLists)	|[DoubleLists](Go/DoubleList.md)|
 
-
 A list where each element points to the next element in the list.
 
 ## ArrayList
@@ -70,7 +69,7 @@ A list where each element points to the next element in the list.
 
 ```
 
-### DoubleList
+### DoubleLists
 
 The late complation
 
