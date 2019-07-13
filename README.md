@@ -30,7 +30,7 @@
 |lists|
 |   |[UseArrayList](#ArrayLists)	|[ArrayLists](Go/ArrayList.md) |
 |   |[UseSingleList](#SingleLists)	|[SinglLists](Go/SingleList.md)|
-|   |[UseDoubleList](#DoubleLists)	|[DoubleLists](Go/DoubleList.md)|
+|   |[UseDoubleList](#DoubleLists)	|[DoubleLists](Go/DoubleLists.md)|
 
 A list where each element points to the next element in the list.
 
