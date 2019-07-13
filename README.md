@@ -21,16 +21,36 @@
 |二叉树镜像|C++|牛客网|[二叉树镜像](https://github.com/PICKQUE/Leetccode/blob/master/牛客网/Mirror.md)|
 |链表的反转|C++|牛客网|[链表的反转](https://github.com/PICKQUE/Leetccode/blob/master/牛客网/Reverlist.md)|
 |树的子结构|C++|牛客网|[树的子结构](https://github.com/PICKQUE/Leetccode/blob/master/牛客网/HasSubtree.md)|
+|二叉树的后序遍历|C++|Leetcode|[二叉树后序遍历](https://github.com/PICKQUE/Leetccode/blob/master/Leetcode/postorderTraversal.md)|
 
 ## go的一些常用的数据结构
 
 |**Data**|**Structure**|**Implementation**|
 |:---:|:---:|:----:|
 |lists|
-|   |[UseSingleList](#SingleLists)|[SinglLists](Go/SingleList.md)|
-|   |[UseArrayList](#ArrayLists)|[ArrayLists](Go/ArrayList.md)|
+|   |[UseArrayList](#ArrayLists)	|[ArrayLists](Go/ArrayList.md) |
+|   |[UseSingleList](#SingleLists)	|[SinglLists](Go/SingleList.md)|
+|   |[UseDoubleList](#DoubleLists)	|[DoubleLists](Go/DoubleList.md)|
+
 
 A list where each element points to the next element in the list.
+
+## ArrayList
+
+`the implementation of mycomprator within GO\StucureTest\ArrayList\main.go`
+
+```go
+	func main() {
+		list := New(3, 2, 1)
+		fmt.Println(list.Size())
+		list.Add(9)
+		fmt.Println(list.element)
+		Sort(list.element[:list.size], mycomprator)
+		fmt.PrintLn(list.element)
+		List.Clear()
+		fmt.Println(list.element)
+	}
+```
 
 ### SingleLists
 
@@ -38,7 +58,7 @@ A list where each element points to the next element in the list.
     func main() {
 		list := New()
 		list.Add(1, 2, 3, 4)
-		// list.HeadAdd(9)
+		list.HeadAdd(9)
 		list.Remove(3)
 		list.Insert(10, 2)
 		t, i := list.Find(2)
@@ -47,8 +67,18 @@ A list where each element points to the next element in the list.
 		}
 		list.Display()
 	}
+
 ```
 
-## ArrayList
+### DoubleList
 
+The late complation
 
+```go
+	
+	func main() {
+		list := New()
+		list.Add(1, 2, 3, 4)
+
+	}
+```
