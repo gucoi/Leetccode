@@ -66,7 +66,6 @@ A list where each element points to the next element in the list.
 		}
 		list.Display()
 	}
-
 ```
 
 ### DoubleLists
@@ -81,3 +80,5 @@ The late complation
 
 	}
 ```
+
+modify
