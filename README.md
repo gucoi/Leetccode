@@ -22,6 +22,7 @@
 |链表的反转|C++|牛客网|[链表的反转](https://github.com/PICKQUE/Leetccode/blob/master/牛客网/Reverlist.md)|
 |树的子结构|C++|牛客网|[树的子结构](https://github.com/PICKQUE/Leetccode/blob/master/牛客网/HasSubtree.md)|
 |二叉树的后序遍历|C++|Leetcode|[二叉树后序遍历](https://github.com/PICKQUE/Leetccode/blob/master/Leetcode/postorderTraversal.md)|
+|旋转图像|C++|Leetcode|[旋转图像](https://github.com/PICKQUE/Leetccode/blob/master/Leetcode/48.旋转图像.md)|
 
 ## go的一些常用的数据结构
 
