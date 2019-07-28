@@ -25,6 +25,7 @@
 |旋转图像|C++|Leetcode|[旋转图像](https://github.com/PICKQUE/Leetccode/blob/master/Leetcode/48.旋转图像.md)|
 |二叉树的堂兄弟|C++|Leetcode|[二叉树的堂兄弟](https://github.com/PICKQUE/Leetccode/blob/master/Leetcode/993.二叉树的堂兄弟节点.md)|
 |AVL|C++|Leetcode|[平衡二叉树](https://github.com/PICKQUE/Leetccode/blob/master/Leetcode/110.平衡二叉树.md)|
+|验证回文字符串|C++|Leetcode|[验证回文字符串](https://github.com/PICKQUE/Leetccode/blob/master/Leetcode/125.验证回文串.md)|
 
 ## go的一些常用的数据结构
 
