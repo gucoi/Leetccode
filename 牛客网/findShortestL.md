@@ -58,11 +58,6 @@ void _findShortestL(int Q,set<int>& tem){
 ```
 
 下面是某位金牌大佬的题解,用的是`dfs`
-=======
-例
-`Input`:`23`
-`Output`:`1 2 3 5 10 13 23`
->>>>>>> abce9e678729aaca867538b7680d4f2a8f0ae3eb
 
 ```C++
 #include <bits/stdc++.h>
@@ -97,11 +92,7 @@ int predict(int cur)
     return roundef_log2[(int)ceil((double)Q / ans[cur])];
 }
 
-<<<<<<< HEAD
 bool _findShortestL(int cur)
-=======
-bool dfs(int cur)
->>>>>>> abce9e678729aaca867538b7680d4f2a8f0ae3eb
 {
     bool fail[M + 5];
     memset(fail, 0, sizeof(fail));
@@ -122,11 +113,7 @@ bool dfs(int cur)
                     return 1;
                 else if(h + cur + 1 <= deep)
                 {
-<<<<<<< HEAD
                     if(_findShortestL(cur + 1))
-=======
-                    if(dfs(cur + 1))
->>>>>>> abce9e678729aaca867538b7680d4f2a8f0ae3eb
                         return 1;
                     else
                         fail[num] = 1;
@@ -150,11 +137,7 @@ int main()
         for(int i = 1; i < M; ++i)
             roundef_log2[i] = get_rounded_log2(i);
         deep = 3;
-<<<<<<< HEAD
         while(!_findShortestL(1))
-=======
-        while(!dfs(1))
->>>>>>> abce9e678729aaca867538b7680d4f2a8f0ae3eb
             ++deep;
         printf("%d\n", deep);
         for(int i = 1; i <= deep; ++i)
