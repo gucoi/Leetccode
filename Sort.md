@@ -2,6 +2,12 @@
 
 ## 快速排序
 
+快排的设计思想
+
+![快排](/图片资源/快排.png)
+
+设计代码
+
 递归版
 
 ```C++
@@ -125,16 +131,18 @@
 ```C++
     void Comb_Sort(int *arr,int l,int r){
        float factor=1.3;
-       int r=0;
        int g=r-l;
+       //n the size of array
+       int n=r-l;
        bool flag=true;
        while(g>1||flag){
             g=(g>1)?g/factor:g;
             flag=false;
             int i=0;
-            while(i+g<=n){
-                if(a[i+l]>a[g+i+l]){
-                    swap(a[i],a[g+i]);
+            //如果全都排序好了，flag为false，g=1直接跳出循环。
+            while(i+g<n){
+                if(arr[i]>arr[g+i]){
+                    std::swap(arr[i],arr[g+i]);
                     flag=true;
                 }
                 i=i+1;
@@ -162,9 +170,9 @@
             Left[i]=arr[i+l];
         for(int i=mid;i<r;i++)
             Right[i-mid]=arr[i+l];
-        MergeSort(L,l,mid);
-        MergeSort(R,mid+1,r);
-        Merge(arr,L,R,mid-l,r-mid);
+        MergeSort(Left,l,mid);
+        MergeSort(Right,mid+1,r);
+        Merge(arr,Left,Right,mid-l,r-mid);
     }
     void Merge(int *arr,int *L,int* R,int l,int r){
         int i=0,j=0,k=0;
