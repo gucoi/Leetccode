@@ -5,7 +5,7 @@
 ```C++
     void FindKthToTail(ListNode* l,unsigned int k){
         ListNode *p=l,*q=p;
-        while(k>0){
+        while(k>0||q==NULL){
             k--;
             q=q->next;
         }

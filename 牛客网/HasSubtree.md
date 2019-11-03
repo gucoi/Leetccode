@@ -11,7 +11,7 @@
 ```C++
     bool HasSubtree(TreeNode* t1,TreeNode* t2){
         if(!t1||!t2)return false;
-        bool flag=true;
+        bool flag=false;
         if(t1->val==t2->val){
             flag=equalTree(t1,t2);
         }

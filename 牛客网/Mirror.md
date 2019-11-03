@@ -8,7 +8,7 @@
 >递归版的
 
 ```C++
-    void Mirror(TreeNode* Root){
+    void Mirror(TreeNode* Root  ){
         if(!Root){
             return;
         }
@@ -33,7 +33,7 @@
         tem.push(Root);
         while(!tem.empty()){
             TreeNode* tempTreeNode=tem.top();
-            tem.pop();
+            tem.pop(); 
             if(tempTreeNode->left||tempTreeNode->right){
                 swap(tempTreeNode->left,tempTreeNode->right;
             }

@@ -17,17 +17,17 @@ public:
             //left to right
             for(int i=left;i<=right;i++)
                 temp.push_back(matrix[top][i]);
-            //top to bottom
+            //top to bottome
             for(int i=top+1;i<=bottom;i++)
                temp.push_back(matrix[i][right]);
             //right to left
             if(top!=bottom)
-            for(int i=right-1;i>=left;i--)
-               temp.push_back(matrix[bottom][i]);
+                for(int i=right-1;i>=left;i--)
+                    temp.push_back(matrix[bottom][i]);
             //left to top
             if(left!=right)
-            for(int i=bottom-1;i>top;i--)
-               temp.push_back(matrix[i][left]);
+                for(int i=bottom-1;i>top;i--)
+                    temp.push_back(matrix[i][left]);
             top++;left++;right--;bottom--;
         }
         return temp;

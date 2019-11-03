@@ -1,10 +1,22 @@
 # 各种排序
 
+各个排序的空间，时间复杂度，以及稳定性如下
+
+| **排序方法** | 时间复杂度（平均） | 时间复杂度（最坏） | 时间复杂度（最好） | 空间复杂度 | 稳定性 | 复杂性 |
+| :----------: | :----------------: | :----------------: | :----------------: | :--------: | :----: | :----: |
+| 直接插入排序 |       O(n^2)       |       O(n^2)       |        O(n)        |    O(1)    |  稳定  |  简单  |
+|   希尔排序   |     O(nlog_2n)     |       O(n^2)       |        O(n)        |    O(1)    | 不稳定 | 较复杂 |
+| 直接选择排序 |       O(n^2)       |       O(n^2)       |       O(n^2)       |    O(1)    | 不稳定 |  简单  |
+|    堆排序    |     O(nlog_2n)     |     O(nlog_2n)     |     O(nlog_2n)     |    O(1)    | 不稳定 | 较复杂 |
+|   冒泡排序   |       O(n^2)       |       O(n^2)       |        O(n)        |    O(1)    |  稳定  |  简单  |
+|   快速排序   |     O(nlog_2n)     |       O(n^2)       |     O(nlog_2n)     | O(nlog_2n) | 不稳定 | 较复杂 |
+|   归并排序   |     O(nlog_2n)     |     O(nlog_2n)     |     O(nlog_2n)     |    O(n)    |  稳定  | 较复杂 |
+
 ## 快速排序
 
 快排的设计思想
 
-![快排](/图片资源/快排.png)
+![快排](图像资源/快排.png)
 
 设计代码
 
@@ -16,7 +28,7 @@
         int val=arr[l];
         int i=l,j=r;
         while(i<j){
-            while(i<j&&arr[j]>val)
+            while(i<j&&arr[j]>=val)
                 j--;
             swap(arr[i],arr[j]);
             while(i<j&&arr[i]<val)
@@ -154,22 +166,14 @@
 ## 归并排序
 
 **分而治之**
-![分而治之](/图片资源/分而治之.png)
+![分而治之](图像资源/分而治之.png)
 
 **合并有序子序列**
-![合并相邻有序子序列](/图片资源/合并.png)
+![合并相邻有序子序列](图像资源/合并.png)
 
 ```C++
     void MergeSort(int *arr,int l, int r){
-        if(l<=r)return;
-        int mid=((r-l)/2)+l;
-        int len=r-l;
-        int *Left=new int[mid-l];
-        int *Right=new int[len-mid-l];
-        for(int i=0;i<mid;i++)
-            Left[i]=arr[i+l];
-        for(int i=mid;i<r;i++)
-            Right[i-mid]=arr[i+l];
+        
         MergeSort(Left,l,mid);
         MergeSort(Right,mid+1,r);
         Merge(arr,Left,Right,mid-l,r-mid);
@@ -227,7 +231,7 @@
 
 时间复杂度：O(n^2)
 具体过程可以参考此图片
-![直接插入排序](/图片资源/直接插入排序.jpg)
+![直接插入排序](图像资源/直接插入排序.jpg)
 
 ```C++
     void DistrictInsertSort(int A[],int n){
