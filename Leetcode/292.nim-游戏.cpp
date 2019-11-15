@@ -6,7 +6,7 @@
 class Solution {
 public:
     bool canWinNim(int n) {
-        if(count%2!=00&&n<3)
+        if(count%2!=0&&n<3)
             return true;
         if(n<0){
             return false;

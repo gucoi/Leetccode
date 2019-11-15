@@ -1,12 +1,16 @@
 # Redis
 
+## Redis经典面试题
+
+[面试题](https://www.cnblogs.com/jasontec/p/9699242.html)
+
 ## Redis数据类型
 
-1. `string`数据类型
-2. `hash`数据类型
-3. `list`数据类型
-4. `set`数据类型
-5. `zset`数据模型
+1. `string`字符串
+2. `hash`hash
+3. `list`链表
+4. `set`集合
+5. `zset`排序集合
 
 ## 使用redis有什么缺点
 

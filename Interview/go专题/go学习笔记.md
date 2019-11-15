@@ -7,11 +7,188 @@ golang中只有引用，值两种类型。切片slice，字典map，管道channe
 
 用切片传数组参数，既可以达到节约内存的目的，也可以达到合理处理好共享内存的问题。
 
+## go中数组和切片传参
+
+数组作为参数传递时，传递的是值，切片作为参数传递时，传递的是地址值，所以数组中的值是不可更改的，但是切片中的值可以修改
+
+```Go
+    func changea(array [3]int)[3]int{
+        array[0]=0
+        return array
+    }
+    func changes(slice []int)[]int{
+        slice[0]=0
+        return slice
+    }
+    func main(){
+        s:=[]int{1,2,3}
+        a:=[3]int{1,2,3}
+        changea(a)
+        changes(s)
+        fmt.Println(a)// 1,2,3
+        fmt.Println(s)//0,2,3
+    }
+```
+
+## go中的break可以用lable
+
+* break用于select
+  break跳出一个select循环
+
+  ```Go
+    select{
+        <-case:
+            fmt.Println("This case is selected")
+            break
+        default:
+            fmt.Println("This is the default case.")
+    }
+  ```
+
+* break用于嵌套循环
+  在 switch 或 select 语句中，break语句的作用结果是跳过整个代码块，执行后续的代码。但是嵌套循环时，只会跳出最内层的循环，最外层的for循环还是一直在跑。要想跳出最外层的循环可以在 break 后指定标签。用标签决定哪个循环被终止。
+
+  ```Go
+        stopLable:
+        for {
+            time.Sleep(p.Cfg.WatchInterval)
+        select {
+            case <-ctx.Done():
+                return
+            default:
+                err := p.watchSomeThing(ctx)
+                if err != nil {
+                    p.Error(zap.Error(errors.Wrap(err, "watch something")))
+                    //continue
+                    break stopLable//TODO:临时修改
+                }
+            }
+        }
+  ```
+  
 ## golang切片扩容的探讨
 
 1. 切片每次新增个数不超过原来的1倍，且每次增加数不超过1024个，且增加后总长度小于1024个，这种情况下扩容为原来的2倍。
 2. 切片一次新增个数超过原来的1倍，但不超过1024个，且增加后总长度小于1024个，这种情况下扩容后比实际具有有的总长度还要大一些
 3. 原切片长度超过1024，一次增加容量不是2倍而是0.25倍，每次超过预定的都是0.25累乘
+
+## go中的map为hash，每次遍历时的顺序不一定一致
+
+## go中异常处理
+
+go中可以抛出异常，然后再`defer`中通过`recover`捕获这个异常，然后再正常处理，如果同时有多个`defer`，那么异常会被最近的`recover`捕获并正常处理，`recover`必须在`defer`函数中运行，多层嵌套依然无效，必须在`defer`中直接调用才有效
+
+```Go
+func test(){
+    defer func(){
+        fmt.Println("打印前")
+    }()
+    defer func(){//必须先声明defer 否则不能 recover
+        if err:=recover();err!=nil{
+            fmt.Println(err)
+        }
+        fmt.Println("打印中")
+    }()
+    defer func(){
+        fmt.Println("打印后")
+    }()
+    panic("触发异常")
+}
+```
+
+## go如何对json数据进行处理
+
+```Go
+
+type student struct {
+    Name string//注意这里属性需要大写，因为json.Unmarshal是在其他文件中填入这个属性值的，需要将其设置为public的
+}
+
+func main() {
+    js := `{
+        "name":"11"
+    }`
+    var p student
+    err := json.Unmarshal([]byte(js), &p)
+    if err != nil {
+        fmt.Println("err", err)
+        return
+    }
+    fmt.Println("p", p)
+}
+
+```
+
+## 代码问题
+
+```Go
+type People struct {
+    Name string
+}
+
+func (p *People) String() string {
+    return fmt.Sprintf("print: %v", p)
+}
+
+func main() {
+    p := &People{}
+    p.String()
+}
+//因为%v调用的就是String()方法，无限递归，最后栈溢出
+```
+
+## go中为空的变量
+
+当为变量赋nil值时，变量必须有类型，interface{} error都行，
+string为空是""，不是nil
+
+## go中没有前置自加自减，只可以后置自加和自减
+
+## 观察代码
+
+```Go
+    package main
+
+import "fmt"
+
+type query func(string) string
+
+func exec(name string, vs ...query) string {
+	ch := make(chan string)
+	fn := func(i int) {
+		ch <- vs[i](name)
+	}
+	for i, _ := range vs {
+		go fn(i)
+		if v, ok := <-ch; ok {
+			return v
+		}
+	}
+	return ""
+}
+func main() {
+	ret := exec("111", func(name string) string {
+		return name + "func1"
+	}, func(name string) string {
+		return name + "func2"
+	}, func(name string) string {
+		return name + "func3"
+	})
+	fmt.Println(ret)
+}
+
+```
+
+## go中rune切片
+
+go中rune切片针对于汉字utf-8来说的
+
+```Go
+    a := "abc我爱你"
+    s := []rune(a)
+    fmt.Printf("%c\n", s[3])
+    fmt.Printf("%c", a[3])
+```
 
 ## go中make切片中len()和cap()的差别
 

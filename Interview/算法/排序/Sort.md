@@ -26,19 +26,16 @@
     void Quick_Sort(int *arr,int l,int r){
         if(l>=r)return;
         int val=arr[l];
-        int i=l,j=r;
+        int i=l-1,j=r+1;
         while(i<j){
-            while(i<j&&arr[j]>=val)
-                j--;
-            swap(arr[i],arr[j]);
-            while(i<j&&arr[i]<val)
-                i++;
-            swap(arr[i],arr[j]);
+            do i++; while(val>arr[i]);
+            do j--; while(val<arr[j]);
+            if(i<j) swap(arr[i],arr[j]);
         }
         //左半部分开始遍历
-        Quick_Sort(arr,l,i-1);
+        Quick_Sort(arr,l,j);
         //右半部分开始遍历
-        Quick_Sort(arr,i+1,r);
+        Quick_Sort(arr,j+1,r);
     }
 ```
 
@@ -172,55 +169,48 @@
 ![合并相邻有序子序列](图像资源/合并.png)
 
 ```C++
-    void MergeSort(int *arr,int l, int r){
-        
-        MergeSort(Left,l,mid);
-        MergeSort(Right,mid+1,r);
-        Merge(arr,Left,Right,mid-l,r-mid);
-    }
-    void Merge(int *arr,int *L,int* R,int l,int r){
-        int i=0,j=0,k=0;
-        while(i<l&&j<r){
-            if(L[i]<R[j]){
-                arr[k++]=L[i++];
-            }
-            else
-                arr[k++]=R[j++];
+    void merge(vector<int> nums,int l,int r){
+        if(l>=r)return;
+        int mid=l+r>>1;
+        merge(nums,l,mid);
+        merge(nums,mid+1,r);
+        vector<int> tem;
+        int i=l,j=mid+1;
+        while(i<=mid&&j<=r){
+            if(nums[i]<=nums[j])tem.push_back(nums[i++]);
+            else tem.push_back(nums[j++]);
         }
-        while(i<l)arr[k++]=L[i++];
-        while(j<r)arr[k++]=L[j++];
+        while(i<=mid)tem.push_back(nums[i++]);
+        while(j<=mid)tem.push_back(nums[j++]);
+        i=l;
+        for(auto t:tem){
+            nums[i++]=t;
+        }
     }
 ```
 
 ## 堆排序
 
 ```C++
-    //构建大堆
-    void BuildMaxHeap(int *A,int len){
-        for(int i=len/2;i>0;i--){
-            AdjustDown(A,i,len);
+    void adjust_heap(vector<int>& nums,int x,int n){
+        int l=x*2+1;
+        int r=x*2+2;
+        int max=x;
+        if(l<n&&nums[l]>nums[max])max=l;
+        if(r<n&&nums[r]>nums[max])max=r;
+        if(max!=x){
+            swap(nums[max],nums[x]);
+            adjust_heap(nums,max,n);
         }
     }
-    void AdjustDown(int *A,int k,int len){
-        int temp=A[k];
-        for(i=2*k;i<=len;i++){
-            if(i<len&&A[i]<A[i+1])
-                i++;
-            if(temp>=A[i])
-                break;
-            else{
-                A[k]=A[i];
-                k=i;
-            }
+    void heap_sort(vector<int>& nums){
+        int n=nums.size();
+        for(int i=n/2-1;i>=0;i--){
+            adjust_heap(nums,i,n);
         }
-        A[k]=temp;
-    }
-    //堆排序算法
-    void HeapSort(int *A,int len){
-        BuildMaxHeap(A,len);
-        for(i=len;i>1;i--){
-            std::swap(A[i],A[1]);
-            AdjustDown(A,1,i-1);
+        for(int i=n-1;i>=0;i--){
+            swap(nums[i],nums[0]);
+            adjust_heap(nums,0,i);
         }
     }
 ```

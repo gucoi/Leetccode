@@ -1,4 +1,3 @@
-
 // 饿汉模式 每次运行时初始化单例实例
 #include<iostream>
 #include<string>

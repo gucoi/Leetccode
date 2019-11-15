@@ -9,8 +9,10 @@ using namespace std;
 class LogNotPerfect{
     public:
         static LogNotPerfect* Instance(){
-            if(m_instance==NULL){
+            if(m_instance==nullptr){
+                cout<<"instance created only once";
                 m_instance=new LogNotPerfect();
+                //为了释放资源
                 static Destory de;
                 return m_instance;
             }
